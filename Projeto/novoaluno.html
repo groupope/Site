@@ -37,7 +37,7 @@
     </div>
 	
     <!--------------------------- ESTE É O CONTEUDO DO SITE-------------------------------->
-	 <main class="conteudo">
+	 	 <main class="conteudo">
         <br>
         <br>
         <br>
@@ -47,7 +47,9 @@
 		<br/>
 		<br/>
 	
-	<form id="formulario" action="javascript:cadastrar_aluno();">
+	<form id="formulario"
+            action=""
+            method="POST">
         <label>* Login:</label><br/>
         <input type="text"  id = "login">
 		<br/>
@@ -65,7 +67,7 @@
 		<br/>
 		<br/>
 		<label>* Nascimento:</label><br/>
-        <input type="text"  id = "nascimento">
+        <input type="date"  id = "nascimento">
 		<br/>
 		<br/>
 		<label>* CPF:</label><br/>
@@ -73,21 +75,18 @@
 		<br/>
 		<br/>
 		<label>* Senha:</label><br/>
-        <input type="text"  id = "senha">
+        <input type="password"  id = "senha">
 		<br/>
 		<br/>
 		<label>* Confirmação de Senha:</label><br/>
-        <input type="text"  id = "confsenha">
+        <input type="password"  id = "confsenha">
 		<br/>
 		<br/>
 		
         <input type="submit" value="Enviar">
-		
+
     </form>
-		<br/>
-		<br/>
-		<br/>
-		<br/>
+	
 	</main>
 	
 	
