@@ -5,7 +5,7 @@
     <title>NOVO ALUNO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="estilo.css" />
-	<script src="javascriptnovoaluno.js" defer async charset="utf-8"></script>
+	<script src="javascript.js" defer async charset="utf-8"></script>
 
 	<link rel="apple-touch-icon" sizes="57x57" href="imgs/icone-url.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="imgs/icone-url.png">
@@ -30,14 +30,16 @@
         <img src="imgs/logo-menu.png" height="70px" class="logo-menu">
         
         <ul>
-            <li><a href="#">INDEX</a></li>
-            <li><a href="#">CURSOS</a></li>
-            <li class="menu-login"><a href="#">LOGIN</a></li>
+            <li><a href="index.html">INDEX</a></li>
+            <li><a href="cursos.html">CURSOS</a></li>
+            <li class="menu-login"><a href="page_index.html">LOGIN</a></li>
+			<li class="menu-login"><a href="novoaluno.html">ALUNO</a></li>
+			<li class="menu-login"><a href="matricula.html">MATRÍCULA</a></li>
         </ul>
     </div>
 	
     <!--------------------------- ESTE É O CONTEUDO DO SITE-------------------------------->
-	 	 <main class="conteudo">
+	 <main class="conteudo">
         <br>
         <br>
         <br>
@@ -46,10 +48,7 @@
 		<br/>
 		<br/>
 		<br/>
-	
-	<form id="formulario"
-            action=""
-            method="POST">
+	<form id="formulario" action="javascript:cadastrar_aluno();">
         <label>* Login:</label><br/>
         <input type="text"  id = "login">
 		<br/>
@@ -75,18 +74,21 @@
 		<br/>
 		<br/>
 		<label>* Senha:</label><br/>
-        <input type="password"  id = "senha">
+        <input type="text"  id = "senha">
 		<br/>
 		<br/>
 		<label>* Confirmação de Senha:</label><br/>
-        <input type="password"  id = "confsenha">
+        <input type="text"  id = "confsenha">
 		<br/>
 		<br/>
 		
         <input type="submit" value="Enviar">
-
+		
     </form>
-	
+		<br/>
+		<br/>
+		<br/>
+		<br/>
 	</main>
 	
 	
