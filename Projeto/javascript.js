@@ -27,6 +27,36 @@ function valida_cpf(cpf){
 	}
 }
 
+function calcula_idade(data){
+	var dt = new Date(data);
+    var dia = dt.getDate()+1;
+    var mes = dt.getMonth()+1;
+    var ano = dt.getFullYear();
+    var dt_atual = new Date();
+    var dia_atual = dt_atual.getDate();
+    var mes_atual = dt_atual.getMonth()+1;
+    var ano_atual = dt_atual.getFullYear();
+    if(ano < (ano_atual-17)){
+        return true;
+    }else if(ano == (ano_atual-17)){
+    	if(mes < mes_atual){
+        	return true;
+        }else if(mes == mes_atual){
+            if(dia < dia_atual){
+            	return true;
+            }else if(dia == dia_atual){
+            	return true;
+            }else{
+            	return false
+            }
+        }else{
+        	return false;
+        }
+    }else{
+    	return false;
+    }
+}
+
 function cadastrar_aluno(){
 	var obrigatorio1 = document.getElementById("login").value;
 	var obrigatorio2 = document.getElementById("nome").value;
@@ -48,66 +78,22 @@ function cadastrar_aluno(){
 	}else if(!regex.exec(validacao.value)){
 		alert("A senha deve conter no mínimo 1 número e 1 letra!");
 		return regex.test(str);
-    }else{
+	}else if(vSenha != vConfsenha){
+		alert("Senhas não conferem!");
+    }else if(calcula_idade(document.getElementById("nascimento").value) == false){
+		alert("Idade insuficiente!");
+	}else{
 		alert("Cadastrado com sucesso!");
 	}
 }
 
-/*
-document.getElementById("formulario").onsubmit=function(event){
-var obrigatorio1 = document.getElementById("login");
-var obrigatorio2 = document.getElementById("nome");
-var obrigatorio3 = document.getElementById("email");
-var obrigatorio4 = document.getElementById("nascimento");
-var obrigatorio5 = document.getElementById("obrigatorio5");
-var obrigatorio6 = document.getElementById("senha");
-var obrigatorio7 = document.getElementById("confsenha");
-var vSenha = document.getElementById("senha");
-var vConfsenha = document.getElementById("confsenha");
-
-var validacao = document.getElementById("senha");
-var regex = /(?=.*[0-9])(?=.*[a-z])/;
-
-
-if (obrigatorio1.value == ""){
-        alert("Campo obrigatório não preenchido.");
-return false;
+var x =5;
+function form_matricula(){
+	var rows = document.getElementById("tabela").getElementsByTagName("tr").length;
+	rows -= 1;
+	for(var j=1;j<=rows;j++){
+		if(document.getElementById("aprovado")[j].checked==true){
+			alert("SIm");
+		}
+    }
 }
-    if (obrigatorio2.value == ""){
-        alert("Campo obrigatório não preenchido.");
-return false;
-}
-if (obrigatorio3.value == ""){
-        alert("Campo obrigatório não preenchido.");
-return false;
-}
-if (obrigatorio4.value == ""){
-        alert("Campo obrigatório não preenchido.");
-return false;
-}
-if (obrigatorio5.value == ""){
-        alert("Campo obrigatório não preenchido.");
-	return false;
-}
-if(obrigatorio5.length != 10){
-	alert("Campo obrigatorio5 não preenchido corretamente");
-	return false;
-}
-if (obrigatorio6.value == ""){
-        alert("Campo obrigatório não preenchido.");
-return false;
-}
-if (obrigatorio7.value == ""){
-        alert("Campo obrigatório não preenchido.");
-return false;
-}
-if (senha.value != confsenha.value) {
-alert("As senhas não correspondem!");
-        return false;
-    } 
-if(!regex.exec(validacao.value)){
-alert("A senha deve conter no mínimo 1 número e 1 letra!");
-return regex.test(str);
-}
-};
-*/
